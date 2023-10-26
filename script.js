@@ -2,6 +2,7 @@ let btn = document.querySelector('button');
 let input = document.querySelector('input');
 let images = document.querySelector('.images');
 let loading = document.querySelector('.loading');
+let dialog = document.querySelector('#myD');
 
 btn.addEventListener('click', (e) => {
     images.innerHTML = "";
@@ -26,7 +27,13 @@ btn.addEventListener('click', (e) => {
 
 });
 
+//todo ---------- to crate dialog box ----------
 function fullImage(img){
-    src = img.src;
-    
+    dialog.innerHTML =`
+    <img src="${img}" alt="Not found" />
+    `
+    dialog.show();
 }
+dialog.addEventListener('click', () =>{
+    dialog.close();
+});
